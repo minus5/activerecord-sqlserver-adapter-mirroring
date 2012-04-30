@@ -4,7 +4,7 @@ $:.push File.expand_path("../lib", __FILE__)
 Gem::Specification.new do |s|
   s.name        = "activerecord-sqlserver-adapter-mirroring"
   s.version     = File.read('VERSION').strip
-  s.authors     = ["Igor Anicaca"]
+  s.authors     = ["Igor Anica"]
   s.email       = ["ianic@minus5.hr"]
   s.homepage    = "https://github.com/minus5/activerecord-sqlserver-adapter-mirroring"
   s.summary     = "Database mirroring support for Rails activerecord-sqlserver-adapter"
