@@ -31,10 +31,10 @@ reconnect to the *mirror* host.
 
  * Create database named *activerecord\_unittest\_mirroring*.
  * Configure mirroring for that database. 
- * Create user *rails* withot password, with sysadmin role on both
-   servers. Sysadmin rights are needed because rails user will initate
+ * Create user *rails* without password, with sysadmin role on both
+   servers. Sysadmin rights are needed because rails user will initiate
    mirroring failover.
- * Ensure that one server reponds to the *primary* hostname, and another
+ * Ensure that one server responds to the *primary* hostname, and another
    to the *mirror* hostname.
  * Run tests
  
