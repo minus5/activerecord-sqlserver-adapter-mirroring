@@ -52,11 +52,14 @@ module ActiveRecord
       end
       
       def switch_to_mirror
-        mirror_root = @connection_options[:mirror] || @connection_options['mirror']
-        mirror_root.each_key do |key|
-          tmp = mirror_root[key]
-          mirror_root[key] = @connection_options[key.to_sym] || @connection_options[key]
-          @connection_options[key.to_sym] = tmp
+        #make deep copy, so we don't change orignal config
+        @connection_options = Marshal.load(Marshal.dump(@connection_options)) 
+        @connection_options.symbolize_keys!
+        @connection_options[:mirror].symbolize_keys!
+
+        @connection_options[:mirror].each_key do |key|
+          tmp = @connection_options[:mirror][key]
+          @connection_options[:mirror][key] = @connection_options[key]
           @connection_options[key] = tmp
         end
       end      

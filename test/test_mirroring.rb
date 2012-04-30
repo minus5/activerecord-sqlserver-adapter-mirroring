@@ -19,7 +19,7 @@ class TestMirroring < ActiveRecord::TestCase
     assert_equal 2, Programmer.count
     
     failover
-    
+
     Programmer.create(:first_name => "Vedran",  :last_name => "Skrnjug")    
     assert_equal 3, Programmer.count    
   end
