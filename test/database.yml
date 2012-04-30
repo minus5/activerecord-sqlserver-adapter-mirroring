@@ -1,0 +1,8 @@
+test:
+  adapter:  sqlserver
+  host:     primary
+  database: activerecord_unittest_mirroring
+  username: rails
+  password: 
+  mirror: 
+    host: mirror
