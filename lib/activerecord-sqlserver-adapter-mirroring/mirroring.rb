@@ -5,9 +5,9 @@ module ActiveRecord
       #Returns hash with db mirroring status details
       #  if mirroring is inactive for current database returns empty hash
       connection.select_one("
-          SELECT 
+          SELECT
               DB_NAME(database_id) database_name
-            , mirroring_role_desc 
+            , mirroring_role_desc
             , mirroring_safety_level_desc
             , mirroring_state_desc
             , mirroring_safety_sequence
@@ -18,10 +18,10 @@ module ActiveRecord
             , mirroring_failover_lsn
          FROM sys.database_mirroring
          WHERE mirroring_guid IS NOT NULL
-       	   and database_id = db_id(); 
+           and database_id = db_id();
         ") || {}
     end
-    
+
     #Returns true if current database is db mirroring principal
     def self.db_mirroring_active?
       db_mirroring_status["mirroring_role_desc"] == "PRINCIPAL"
@@ -31,7 +31,7 @@ module ActiveRecord
     def self.db_mirroring_synchronized?
       db_mirroring_status["mirroring_state_desc"] == "SYNCHRONIZED"
     end
-    
+
     #Returns current database server name
     def self.server_name
       connection.select_value("select @@servername")
@@ -50,10 +50,10 @@ module ActiveRecord
       def mirror_defined?
         !@connection_options[:mirror].nil?
       end
-      
+
       def switch_to_mirror
         #make deep copy, so we don't change orignal config
-        @connection_options = Marshal.load(Marshal.dump(@connection_options)) 
+        @connection_options = Marshal.load(Marshal.dump(@connection_options))
         @connection_options.symbolize_keys!
         @connection_options[:mirror].symbolize_keys!
 
@@ -62,27 +62,27 @@ module ActiveRecord
           @connection_options[:mirror][key] = @connection_options[key]
           @connection_options[key] = tmp
         end
-      end      
+      end
 
     end
 
     class SQLServerAdapter
       include ActiveRecord::ConnectionAdapters::SqlServerMirroring
-      
+
       def connect_with_mirroring
         return connect_without_mirroring unless mirror_defined?
         connect_without_mirroring rescue connect_to_mirror
         connect_to_mirror if @auto_connecting && !active?
         @connection
-      end            
+      end
 
       alias_method_chain :connect, :mirroring
-      
-      private 
+
+      private
 
       def connect_to_mirror
         switch_to_mirror
-        connect_without_mirroring        
+        connect_without_mirroring
       end
 
     end
