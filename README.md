@@ -3,7 +3,7 @@
 A simple plugin which adds database mirroring support for [Rails MS Sql
 Server Adapter](https://github.com/rails-sqlserver/activerecord-sqlserver-adapter).
 
-Targets Rails 3.2.x and activerecord-sqlserver-adapter 3.2.3.
+Targets Rails 4.1.x and activerecord-sqlserver-adapter 4.1.0.
 
 ## Usage
 
