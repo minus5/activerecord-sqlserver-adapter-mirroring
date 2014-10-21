@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    activerecord-sqlserver-adapter-mirroring (0.2.0)
+    activerecord-sqlserver-adapter-mirroring (4.1.0)
       activerecord-sqlserver-adapter (~> 4.1.0)
 
 GEM
