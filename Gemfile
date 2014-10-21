@@ -1,7 +1,9 @@
 source "http://rubygems.org"
 
-# Specify your gem's dependencies in activerecord-sqlserver-adapter-mirroring.gemspec
-gem "rake"
 gem "tiny_tds"
-gem "minitest"
+
+group :development do
+  gem 'rake', '~> 0.9.2'
+end
+
 gemspec
