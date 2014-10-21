@@ -1,7 +1,7 @@
 require 'test_helper'
 require 'minitest/autorun'
 
-class TestChangeConnectionParams  < MiniTest::Test
+class TestChangeConnectionParams  < ActiveSupport::TestCase
   def test_config
     @model = DummyModel.new({  
                              :adapter  => :sqlserver,
