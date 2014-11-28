@@ -1,37 +1,43 @@
 PATH
   remote: .
   specs:
-    activerecord-sqlserver-adapter-mirroring (0.1.2)
-      activerecord-sqlserver-adapter (~> 3.2.3)
+    activerecord-sqlserver-adapter-mirroring (4.1.0)
+      activerecord-sqlserver-adapter (~> 4.1.0)
 
 GEM
   remote: http://rubygems.org/
   specs:
-    activemodel (3.2.14)
-      activesupport (= 3.2.14)
-      builder (~> 3.0.0)
-    activerecord (3.2.14)
-      activemodel (= 3.2.14)
-      activesupport (= 3.2.14)
-      arel (~> 3.0.2)
-      tzinfo (~> 0.3.29)
-    activerecord-sqlserver-adapter (3.2.10)
-      activerecord (~> 3.2.0)
-    activesupport (3.2.14)
-      i18n (~> 0.6, >= 0.6.4)
-      multi_json (~> 1.0)
-    arel (3.0.2)
-    builder (3.0.4)
-    i18n (0.6.5)
-    multi_json (1.8.0)
-    rake (10.1.0)
-    tiny_tds (0.5.1)
-    tzinfo (0.3.37)
+    activemodel (4.1.6)
+      activesupport (= 4.1.6)
+      builder (~> 3.1)
+    activerecord (4.1.6)
+      activemodel (= 4.1.6)
+      activesupport (= 4.1.6)
+      arel (~> 5.0.0)
+    activerecord-sqlserver-adapter (4.1.0)
+      activerecord (~> 4.1.0)
+      arel
+    activesupport (4.1.6)
+      i18n (~> 0.6, >= 0.6.9)
+      json (~> 1.7, >= 1.7.7)
+      minitest (~> 5.1)
+      thread_safe (~> 0.1)
+      tzinfo (~> 1.1)
+    arel (5.0.1.20140414130214)
+    builder (3.2.2)
+    i18n (0.6.11)
+    json (1.8.1)
+    minitest (5.4.2)
+    rake (0.9.6)
+    thread_safe (0.3.4)
+    tiny_tds (0.6.2)
+    tzinfo (1.2.2)
+      thread_safe (~> 0.1)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   activerecord-sqlserver-adapter-mirroring!
-  rake
+  rake (~> 0.9.2)
   tiny_tds

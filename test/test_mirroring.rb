@@ -1,6 +1,7 @@
 require 'test_helper'
+require 'minitest/autorun'
 
-class TestMirroring < ActiveRecord::TestCase
+class TestMirroring < ActiveSupport::TestCase
 #  self.use_transactional_fixtures = false
 
   def setup

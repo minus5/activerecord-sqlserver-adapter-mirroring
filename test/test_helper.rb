@@ -1,8 +1,10 @@
 require 'rubygems'
-require 'test/unit'
-require 'active_support'
+require 'bundler'
+Bundler.setup
+require 'active_support/dependencies'
 require 'active_record'
-require 'active_model'
+require 'active_record/version'
+require 'active_record/connection_adapters/abstract_adapter'
 require 'pp'
 
 $:.unshift "#{File.dirname(__FILE__)}/../"
